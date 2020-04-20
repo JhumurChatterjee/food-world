@@ -1,0 +1,42 @@
+<%= form_for @user do |f| %>
+  <%= render "shared/errors", object: @user %>
+
+  <div class="col sm-12">
+    <div class="form-group">
+      <%= f.label :name, class: "required" %>
+      <%= f.text_field :name, autofocus: true, autocomplete: :off, class: "form-control", required: true  %>
+    </div>
+  </div>
+
+  <div class="col sm-12">
+    <div class="form-group">
+      <%= f.label :email, class: "required" %>
+      <%= f.email_field :email, autocomplete: :off, class: "form-control", required: true  %>
+    </div>
+  </div>
+
+  <div class="col sm-12">
+    <div class="form-group">
+      <%= f.label :phone_number %>
+      <%= f.text_field :phone_number, autocomplete: :off, class: "form-control"  %>
+    </div>
+  </div>
+
+  <div class="col sm-12">
+    <div class="form-group">
+      <%= f.label :password, class: "required" %>
+      <%= f.password_field :password, autocomplete: :off, class: "form-control", required: true  %>
+    </div>
+  </div>
+
+  <div class="col sm-12">
+    <div class="form-group">
+      <%= f.label :password_confirmation, class: "required" %>
+      <%= f.password_field :password_confirmation, autocomplete: :off, class: "form-control", required: true  %>
+    </div>
+  </div>
+
+  <div class="col sm-12 text-right">
+    <%= f.submit "Register User", class: "btn btn-primary mb-2" %>
+  </div>
+<% end %>

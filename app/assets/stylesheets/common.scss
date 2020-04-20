@@ -1,0 +1,39 @@
+@font-face {
+  font-family: 'AUBREY1__';
+  src: font-url("AUBREY1__.TTF");
+}
+body {
+  background-color: #F0F0F0;
+  font-family: 'AUBREY1__', arial;
+  min-height: 100vh;
+  font-size: 20px;
+}
+
+.reg-form {
+  padding: 20px;
+  width: 40%;
+}
+
+.error-block {
+  border: 1px solid #FF0000;
+  font-size: 15px;
+  background-color: #FFCCCB;
+  margin-bottom: 10px;
+  padding-top: 15px;
+}
+
+.required::after {
+  content: "* ";
+  color: #FF0000;
+}
+
+input, .form-control {
+  border-style: none !important;
+  border-bottom: 1px solid #000000 !important;
+  border-radius: 0;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-bottom: 1px solid #000000 !important;
+}
