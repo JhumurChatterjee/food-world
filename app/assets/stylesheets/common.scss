@@ -1,10 +1,6 @@
-@font-face {
-  font-family: 'AUBREY1__';
-  src: font-url("AUBREY1__.TTF");
-}
 body {
   background-color: #F0F0F0;
-  font-family: 'AUBREY1__', arial;
+  font-family: sans-serif, arial;
   min-height: 100vh;
   font-size: 20px;
 }
@@ -19,7 +15,11 @@ body {
   font-size: 15px;
   background-color: #FFCCCB;
   margin-bottom: 10px;
-  padding-top: 15px;
+  padding: 21px;
+
+  li {
+    list-style-type: circle;
+  }
 }
 
 .required::after {
@@ -30,7 +30,7 @@ body {
 input, .form-control {
   border-style: none !important;
   border-bottom: 1px solid #000000 !important;
-  border-radius: 0;
+  border-radius: 0 !important;
 }
 
 .form-control:focus {
