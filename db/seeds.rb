@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+country = Country.create(name: "India")
+state = State.create(name: "WB", country_id: country.id)
+city = City.create(name: "Kolkata", state_id: state.id)

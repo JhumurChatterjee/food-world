@@ -20,7 +20,6 @@ class CreateTables < ActiveRecord::Migration[6.0]
     create_table :cities do |t|
       t.string     :name,    null: false, limit: 250
       t.references :state,   null: false
-      t.references :country, null: false
       t.bigint     :created_by_id, index: true
       t.bigint     :updated_by_id, index: true
 
@@ -34,11 +33,10 @@ class CreateTables < ActiveRecord::Migration[6.0]
       t.column     :delivery_type,      :string, null: false
       t.column     :food_type,          :string, null: false
       t.column     :delivery_emergency, :string, null: false
-      t.string     :image,              null: false
+      t.string     :image
       t.references :city,               null: false
       t.references :state,              null: false
       t.references :country,            null: false
-      t.references :food,               null: false
       t.bigint     :created_by_id,      index: true
       t.bigint     :updated_by_id,      index: true
 
@@ -49,7 +47,7 @@ class CreateTables < ActiveRecord::Migration[6.0]
       t.string     :name, null: false, limit: 250
       t.column     :food_type,     :string, null: false
       t.column     :continental,   :string, null: false
-      t.string     :image,         null: false
+      t.string     :image
       t.references :restaurant,    null: false
       t.bigint     :created_by_id, index: true
       t.bigint     :updated_by_id, index: true

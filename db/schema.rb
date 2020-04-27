@@ -39,12 +39,10 @@ ActiveRecord::Schema.define(version: 2020_04_21_153814) do
   create_table "cities", force: :cascade do |t|
     t.string "name", limit: 250, null: false
     t.bigint "state_id", null: false
-    t.bigint "country_id", null: false
     t.bigint "created_by_id"
     t.bigint "updated_by_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["country_id"], name: "index_cities_on_country_id"
     t.index ["created_by_id"], name: "index_cities_on_created_by_id"
     t.index ["state_id"], name: "index_cities_on_state_id"
     t.index ["updated_by_id"], name: "index_cities_on_updated_by_id"
@@ -64,7 +62,7 @@ ActiveRecord::Schema.define(version: 2020_04_21_153814) do
     t.string "name", limit: 250, null: false
     t.string "food_type", null: false
     t.string "continental", null: false
-    t.string "image", null: false
+    t.string "image"
     t.bigint "restaurant_id", null: false
     t.bigint "created_by_id"
     t.bigint "updated_by_id"
@@ -82,11 +80,10 @@ ActiveRecord::Schema.define(version: 2020_04_21_153814) do
     t.string "delivery_type", null: false
     t.string "food_type", null: false
     t.string "delivery_emergency", null: false
-    t.string "image", null: false
+    t.string "image"
     t.bigint "city_id", null: false
     t.bigint "state_id", null: false
     t.bigint "country_id", null: false
-    t.bigint "food_id", null: false
     t.bigint "created_by_id"
     t.bigint "updated_by_id"
     t.datetime "created_at", precision: 6, null: false
@@ -94,7 +91,6 @@ ActiveRecord::Schema.define(version: 2020_04_21_153814) do
     t.index ["city_id"], name: "index_restaurants_on_city_id"
     t.index ["country_id"], name: "index_restaurants_on_country_id"
     t.index ["created_by_id"], name: "index_restaurants_on_created_by_id"
-    t.index ["food_id"], name: "index_restaurants_on_food_id"
     t.index ["state_id"], name: "index_restaurants_on_state_id"
     t.index ["updated_by_id"], name: "index_restaurants_on_updated_by_id"
   end
